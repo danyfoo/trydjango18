@@ -10,8 +10,8 @@ class SignUpForm(forms.ModelForm):
 
     def clean_full_name(self):
         full_name = self.cleaned_data.get('full_name')
-        # if not full_name == 'Daniel':
-        #     raise forms.ValidationError("Please use a valid DANIEL valid full_name")
+        if not full_name:
+            raise forms.ValidationError("Please add a full_name")
 
         return full_name
 
