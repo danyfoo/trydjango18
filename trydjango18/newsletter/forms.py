@@ -2,10 +2,25 @@ from django import forms
 
 from .models import SignUp
 
+class ContactForm(forms.Form):
+    full_name = forms.CharField(required=False)
+    email =  forms.EmailField()
+    message = forms.CharField()
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+
+        email_base, provider = email.split("@")
+        domain, extension = provider.split('.')
+        if not extension == 'edu':
+            raise forms.ValidationError("Please use a valid .EDU email address")
+
+        return email
+
 class SignUpForm(forms.ModelForm):
     class Meta:
         model = SignUp  #Modelo de datos a usar
-        fields = ['full_name', 'correo'] #Campos que contendra el formulario
+        fields = ['full_name', 'email'] #Campos que contendra el formulario
         #exclude = ['full_name']    #NO RECOMENDABLE USARLO
 
     #Metodos para validar el contenido del formulario
@@ -17,12 +32,12 @@ class SignUpForm(forms.ModelForm):
         return full_name #Regresamos ese nombre
 
     #NO FUNCIONA CON email
-    def clean_correo(self):
-        correo = self.cleaned_data.get('correo')
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
 
-        correo_base, provider = correo.split("@")
+        email_base, provider = email.split("@")
         domain, extension = provider.split('.')
         if not extension == 'edu':
             raise forms.ValidationError("Please use a valid .EDU email address")
 
-        return correo
+        return email

@@ -1,0 +1,5 @@
+<form method="POST" action="">  <!-- Formulario que hara un POST a la DB con ciertos datos -->
+    {% csrf_token %}    <!-- NECESARIO PARA PODER POSTEAR ALGO, ES UN CODIGO QUE NECESITA DJANGO PARA APROBAR ESTE FORMULARIO-->
+    {{ form.as_p }} <!-- Desplegamos el formulario cada campo entre etiquetas <p>CAMPO_FORMULARIO</p>-->
+    <input type="submit" value="Submit">   <!-- Boton para subir POSTEAR LOS DATOS -->
+</form>
