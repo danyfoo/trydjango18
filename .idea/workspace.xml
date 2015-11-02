@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9359a848-000c-4b6b-a6e7-1241441a3543" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trydjango18/templates/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trydjango18/static/our_static/img/exmaple.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/trydjango18/templates/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trydjango18/templates/home.html" afterPath="$PROJECT_DIR$/trydjango18/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trydjango18/trydjango18/settings.py" afterPath="$PROJECT_DIR$/trydjango18/trydjango18/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trydjango18/trydjango18/urls.py" afterPath="$PROJECT_DIR$/trydjango18/trydjango18/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TryDjango.iws" />
@@ -537,7 +531,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446421599793</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Habilitar el uso de bootstrap y etiquetas de template de Django">
+      <created>1446430083108</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1446430083108</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -582,7 +582,8 @@
     <MESSAGE value="Primer Commit Video 14 de 48" />
     <MESSAGE value="Comentarios en el proyecto" />
     <MESSAGE value="Comentarios en el proyecto, Habilitar envio de mensajes de correo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Comentarios en el proyecto, Habilitar envio de mensajes de correo" />
+    <MESSAGE value="Habilitar el uso de bootstrap y etiquetas de template de Django" />
+    <option name="LAST_COMMIT_MESSAGE" value="Habilitar el uso de bootstrap y etiquetas de template de Django" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
