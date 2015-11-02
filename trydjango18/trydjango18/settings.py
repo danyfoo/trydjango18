@@ -61,7 +61,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             # insert your TEMPLATE_DIRS here
-            BASE_DIR + "/templates",
+            BASE_DIR.child('templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -116,7 +116,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+#STATIC PARA COSAS INTERNAS DEL PROYECTO
 STATIC_URL = '/static/'
+
+STATIC_ROOT = BASE_DIR.child("static", "static_root")
+
+STATICFILES_DIRS = [
+    BASE_DIR.child("static", "our_static"),
+    #'/var/www/static/',
+]
+
+
+#MEDIA PARA COSAS PARA EL USUARIO
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR.child("static", "media_root")
+
 
 TEMPLATE_DEBUG = False
 

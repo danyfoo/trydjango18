@@ -1,9 +1,27 @@
-<h1>{{ title }}</h1>
+{% extends 'base.html' %}
 
-{{ user }}  <!-- Hacemos un request en busca del user logueado -->
+{% block title_head %} Welcome |{% endblock %}
 
-<form method="POST" action="">  <!-- Formulario que hara un POST a la DB con ciertos datos -->
-    {% csrf_token %}    <!-- NECESARIO PARA PODER POSTEAR ALGO, ES UN CODIGO QUE NECESITA DJANGO PARA APROBAR ESTE FORMULARIO-->
-    {{ form.as_p }} <!-- Desplegamos el formulario cada campo entre etiquetas <p>CAMPO_FORMULARIO</p>-->
-    <input type="submit" value="Sign Up">   <!-- Boton para subir POSTEAR LOS DATOS -->
-</form>
+{% block jumbotron %}
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+    </div>
+{% endblock jumbotron %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    {{ user }}  <!-- Hacemos un request en busca del user logueado -->
+
+    <form method="POST" action="">  <!-- Formulario que hara un POST a la DB con ciertos datos -->
+        {% csrf_token %}    <!-- NECESARIO PARA PODER POSTEAR ALGO, ES UN CODIGO QUE NECESITA DJANGO PARA APROBAR ESTE FORMULARIO-->
+        {{ form.as_p }} <!-- Desplegamos el formulario cada campo entre etiquetas <p>CAMPO_FORMULARIO</p>-->
+        <input type="submit" value="Sign Up">   <!-- Boton para subir POSTEAR LOS DATOS -->
+    </form>
+{% endblock content %}
