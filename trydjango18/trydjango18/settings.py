@@ -32,6 +32,7 @@ DJANGO_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
@@ -39,6 +40,7 @@ DJANGO_APPS = (
 THIRDPARTY_APPS = (
     'crispy_forms',
     'flat',
+    'registration',
 )
 
 LOCAL_APPS =(
@@ -128,14 +130,20 @@ STATICFILES_DIRS = [
     #'/var/www/static/',
 ]
 
-
+#MEDIA ES TO DO LO QUE EL USUARIO GUARDA EN LA PAGINA
 #MEDIA PARA COSAS PARA EL USUARIO
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR.child("static", "media_root")
 
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+#VARIABLES DE CONFIGURACION PARA REDUX
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
 
-TEMPLATE_DEBUG = False
+CRISPY_TEMPLATE_PACK = 'bootstrap3' #<-- MOTOR DE TEMPLATES PARA CRISPY
+
+TEMPLATE_DEBUG = False  #<-- PARA QUE PYCHARM NO MARQUE WARNING
 
 #MATERIAL_ADMIN_SITE = 'mymodule.admin.admin_site'
