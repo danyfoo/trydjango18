@@ -37,6 +37,8 @@ DJANGO_APPS = (
 )
 
 THIRDPARTY_APPS = (
+    'crispy_forms',
+    'flat',
 )
 
 LOCAL_APPS =(
@@ -132,6 +134,7 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR.child("static", "media_root")
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 TEMPLATE_DEBUG = False
 

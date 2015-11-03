@@ -11,7 +11,7 @@ class SignUp(models.Model):
     #auto_now       cada vez que se modifica se agrega la fecha
 
     def __unicode__(self):  #PYTHON 3.3 is __str__
-        return self.correo
+        return self.email
 
 #CADA vez que se modifica el models.py se debe ser un makemigrations
 #

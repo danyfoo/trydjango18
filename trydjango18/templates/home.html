@@ -1,27 +1,51 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
-{% block title_head %} Welcome |{% endblock %}
+{% block title_head %} Welcome |{{ block.super }}{% endblock %}
 
-{% block jumbotron %}
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-        </p>
+<style>
+    {% block style %}
+
+    {% endblock %}
+</style>
+
+{% block jumbotron_content %}
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Try Django 1.8</h1>
+            <p class="lead text-align-center">The MVP Landing project is designed to get your project startedd. The goal is to
+                possible with the least amount of investment using time or money. Join Us today </p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+            </p>
+        </div>
+        <div class="col-sm-6" style="background-color:black;height:300px">
+
+        </div>
     </div>
-{% endblock jumbotron %}
+{% endblock %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
+    <div class="row">
+        <div class="col-sm-3">
+            <p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+        </div>
+        <div class="col-sm-3 pull-right">
+            <p class="lead text-align-center">{{ title }}</p>
 
-    {{ user }}  <!-- Hacemos un request en busca del user logueado -->
+            <!-- { { user } }   Hacemos un request en busca del user logueado -->
 
-    <form method="POST" action="">  <!-- Formulario que hara un POST a la DB con ciertos datos -->
-        {% csrf_token %}    <!-- NECESARIO PARA PODER POSTEAR ALGO, ES UN CODIGO QUE NECESITA DJANGO PARA APROBAR ESTE FORMULARIO-->
-        {{ form.as_p }} <!-- Desplegamos el formulario cada campo entre etiquetas <p>CAMPO_FORMULARIO</p>-->
-        <input type="submit" value="Sign Up">   <!-- Boton para subir POSTEAR LOS DATOS -->
-    </form>
+            <form method="POST" action="">  <!-- Formulario que hara un POST a la DB con ciertos datos -->
+                {% csrf_token %}    <!-- NECESARIO PARA PODER POSTEAR ALGO, ES UN CODIGO QUE NECESITA DJANGO PARA APROBAR ESTE FORMULARIO-->
+                {{ form|crispy }} <!-- Desplegamos el formulario cada campo entre etiquetas <p>CAMPO_FORMULARIO</p>-->
+                <input class="btn btn-primary" type="submit" value="Sign Up">   <!-- Boton para subir POSTEAR LOS DATOS -->
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <p class="lead text-align-center">Created for Starters of all kinds.</p>
+        </div>
+        <div class="col-sm-3">
+            <p class="lead text-align-center">Always Open Source</p>
+        </div>
+    </div>
 {% endblock content %}
